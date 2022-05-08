@@ -53,7 +53,7 @@ func BenchmarkGetValue_NutsDB(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		nutsDB.View(func(tx *nutsdb.Tx) error {
 			_, err := tx.Get("test-bucket", GetKey(i))
-			if err != nil {
+			if err != nil && err != nutsdb.ErrKeyNotFound {
 				panic(err)
 			}
 			return nil
