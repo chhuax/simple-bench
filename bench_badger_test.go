@@ -14,7 +14,8 @@ var (
 func init() {
 	dir := "bench/badger"
 	opts := badger.DefaultOptions(dir)
-	opts.MemTableSize = 640 << 20
+	opts.MemTableSize = 512 << 20
+	opts.NumMemtables = 2
 	opts.SyncWrites = false
 	badgerDB, err = badger.Open(opts)
 	if err != nil {
