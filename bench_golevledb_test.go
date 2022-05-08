@@ -2,6 +2,7 @@ package benchmark
 
 import (
 	"github.com/syndtr/goleveldb/leveldb"
+	"github.com/syndtr/goleveldb/leveldb/opt"
 	"log"
 	"testing"
 )
@@ -36,7 +37,7 @@ func BenchmarkPutValue_GoLevelDB(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		key := GetKey(i)
 		val := GetValue()
-		err := levelDb.Put(key, val, nil)
+		err := levelDb.Put(key, val, &opt.WriteOptions{Sync: false})
 		if err != nil {
 			log.Fatal("leveldb write data err.", err)
 		}
