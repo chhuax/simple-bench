@@ -22,17 +22,15 @@ func init() {
 }
 
 func initBadgerData() {
-	for i := 0; i < 500000; i++ {
-		key := GetKey(i)
-		val := GetValue()
-
-		if err = badgerDB.Update(
-			func(txn *badger.Txn) error {
-				return txn.Set(key, val)
-			}); err != nil {
-			log.Fatal(err)
+	badgerDB.Update(func(txn *badger.Txn) error {
+		for i := 0; i < 500000; i++ {
+			err := txn.Set(GetKey(i), GetValue())
+			if err != nil {
+				panic(err)
+			}
 		}
-	}
+		return nil
+	})
 }
 
 func BenchmarkPutValue_BadgerDB(b *testing.B) {
