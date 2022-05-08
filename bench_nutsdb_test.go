@@ -17,6 +17,7 @@ func init() {
 	if err != nil {
 		panic(err)
 	}
+	initNutsDBData()
 }
 
 func initNutsDBData() {
