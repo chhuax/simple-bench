@@ -12,6 +12,7 @@ var (
 
 func init() {
 	dir := "bench/leveldb"
+	var err error
 	levelDb, err = leveldb.OpenFile(dir, nil)
 	if err != nil {
 		log.Fatal(err)
@@ -48,7 +49,7 @@ func BenchmarkGetValue_GoLevelDB(b *testing.B) {
 	b.ReportAllocs()
 	b.ResetTimer()
 	for i := 0; i < b.N; i++ {
-		_, err = levelDb.Get(GetKey(i), nil)
+		_, err := levelDb.Get(GetKey(i), nil)
 		if err != nil && err != leveldb.ErrNotFound {
 			log.Fatal("leveldb read data err.", err)
 		}
