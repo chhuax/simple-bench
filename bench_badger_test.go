@@ -14,8 +14,8 @@ var (
 func init() {
 	dir := "bench/badger"
 	opts := badger.DefaultOptions(dir)
-	opts.MemTableSize = 512 << 20
-	opts.NumMemtables = 2
+	opts.MemTableSize = 128 << 20
+	opts.NumMemtables = 5
 	opts.SyncWrites = false
 	badgerDB, err = badger.Open(opts)
 	if err != nil {
@@ -24,9 +24,9 @@ func init() {
 }
 
 func initBadgerData() {
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 50; i++ {
 		badgerDB.Update(func(txn *badger.Txn) error {
-			for i := 0; i < 100000; i++ {
+			for i := 0; i < 10000; i++ {
 				err := txn.Set(GetKey(i), GetValue())
 				if err != nil {
 					panic(err)
