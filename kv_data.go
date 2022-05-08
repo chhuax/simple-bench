@@ -1,11 +1,13 @@
 package benchmark
 
 import (
+	"bytes"
 	"fmt"
 	"math/rand"
-	"strconv"
 	"time"
 )
+
+const alphabet = "abcdefghijklmnopqrstuvwxyz0123456789"
 
 func init() {
 	rand.Seed(time.Now().Unix())
@@ -16,5 +18,9 @@ func GetKey(n int) []byte {
 }
 
 func GetValue() []byte {
-	return []byte("test_val-val-val-val-val-val-val-val-val-val-val-val-" + strconv.FormatInt(rand.Int63(), 10))
+	var str bytes.Buffer
+	for i := 0; i < 512; i++ {
+		str.WriteByte(alphabet[rand.Int()%36])
+	}
+	return []byte(str.String())
 }

@@ -19,7 +19,7 @@ func init() {
 }
 
 func initLevelDBValue() {
-	for i := 0; i < 10000; i++ {
+	for i := 0; i < 500000; i++ {
 		key := GetKey(i)
 		val := GetValue()
 		err := levelDb.Put(key, val, nil)

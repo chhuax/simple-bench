@@ -12,15 +12,17 @@ var (
 )
 
 func init() {
-	dir := "bench/badgerDB"
-	badgerDB, err = badger.Open(badger.DefaultOptions(dir))
+	dir := "bench/badger"
+	opts := badger.DefaultOptions(dir)
+	opts.SyncWrites = false
+	badgerDB, err = badger.Open(opts)
 	if err != nil {
 		log.Fatal("open badger err.", err)
 	}
 }
 
 func initBadgerData() {
-	for i := 0; i < 10000; i++ {
+	for i := 0; i < 500000; i++ {
 		key := GetKey(i)
 		val := GetValue()
 
