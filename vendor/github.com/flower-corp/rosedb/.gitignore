@@ -1,0 +1,6 @@
+.idea/
+rosedb.iml
+test/
+cmd/proto/*.pb.go
+main
+codecov.yaml

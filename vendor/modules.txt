@@ -1,0 +1,53 @@
+# github.com/bwmarrin/snowflake v0.3.0
+github.com/bwmarrin/snowflake
+# github.com/davecgh/go-spew v1.1.1
+## explicit
+# github.com/flower-corp/rosedb v0.0.0-20220508020730-8f382b63420a
+## explicit
+github.com/flower-corp/rosedb
+github.com/flower-corp/rosedb/ds/art
+github.com/flower-corp/rosedb/ds/zset
+github.com/flower-corp/rosedb/flock
+github.com/flower-corp/rosedb/ioselector
+github.com/flower-corp/rosedb/logfile
+github.com/flower-corp/rosedb/logger
+github.com/flower-corp/rosedb/mmap
+github.com/flower-corp/rosedb/util
+# github.com/golang/snappy v0.0.0-20180518054509-2e65f85255db
+github.com/golang/snappy
+# github.com/plar/go-adaptive-radix-tree v1.0.4
+github.com/plar/go-adaptive-radix-tree
+# github.com/spaolacci/murmur3 v1.1.0
+github.com/spaolacci/murmur3
+# github.com/syndtr/goleveldb v1.0.0
+## explicit
+github.com/syndtr/goleveldb/leveldb
+github.com/syndtr/goleveldb/leveldb/cache
+github.com/syndtr/goleveldb/leveldb/comparer
+github.com/syndtr/goleveldb/leveldb/errors
+github.com/syndtr/goleveldb/leveldb/filter
+github.com/syndtr/goleveldb/leveldb/iterator
+github.com/syndtr/goleveldb/leveldb/journal
+github.com/syndtr/goleveldb/leveldb/memdb
+github.com/syndtr/goleveldb/leveldb/opt
+github.com/syndtr/goleveldb/leveldb/storage
+github.com/syndtr/goleveldb/leveldb/table
+github.com/syndtr/goleveldb/leveldb/util
+# github.com/xujiajun/mmap-go v1.0.1
+github.com/xujiajun/mmap-go
+# github.com/xujiajun/nutsdb v0.8.0
+## explicit
+github.com/xujiajun/nutsdb
+github.com/xujiajun/nutsdb/ds/list
+github.com/xujiajun/nutsdb/ds/set
+github.com/xujiajun/nutsdb/ds/zset
+# github.com/xujiajun/utils v0.0.0-20190123093513-8bf096c4f53b
+github.com/xujiajun/utils/filesystem
+github.com/xujiajun/utils/strconv2
+# go.etcd.io/bbolt v1.3.6
+## explicit
+go.etcd.io/bbolt
+# golang.org/x/sys v0.0.0-20211210111614-af8b64212486
+golang.org/x/sys/internal/unsafeheader
+golang.org/x/sys/unix
+golang.org/x/sys/windows
